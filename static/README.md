@@ -1,0 +1,1 @@
+Sample conference application for PhoneGap Day 2014

@@ -1,0 +1,62 @@
+angular.module('starter.sessions', ['ngResource', 'starter.config', 'starter.push'])
+
+    // Routes
+    .config(function ($stateProvider) {
+
+        $stateProvider
+
+            .state('app.sessions', {
+                url: "/sessions",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/sessions.html",
+                        controller: "SessionListCtrl"
+                    }
+                }
+            })
+
+            .state('app.session', {
+                url: "/sessions/:sessionId",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/session.html",
+                        controller: "SessionCtrl"
+                    }
+                }
+            })
+
+    })
+
+    .factory('Session', function ($resource, HOST) {
+        return $resource(HOST + '/sessions/:sessionId');
+    })
+
+    .controller('SessionListCtrl', function ($scope, Session) {
+        $scope.sessions = Session.query();
+    })
+
+    .controller('SessionCtrl', function ($scope, $stateParams, Session, Notification) {
+        $scope.session = Session.get({sessionId: $stateParams.sessionId});
+
+        $scope.push = function(event) {
+            Notification.push({message: "Check out this session: " + $scope.session.title});
+        }
+
+        $scope.share = function(event) {
+            openFB.api({
+                method: 'POST',
+                path: '/me/feed',
+                params: {
+                    message: "I'll be attending: '" + $scope.session.title + "' by " +
+                        $scope.session.speaker
+                },
+                success: function () {
+                    alert('The session was shared on Facebook');
+                },
+                error: function () {
+                    alert('An error occurred while sharing this session on Facebook');
+                }
+            });
+        };
+
+    });
