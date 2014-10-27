@@ -27,15 +27,17 @@ angular.module('conference.sessions', ['ngResource', 'conference.config', 'confe
 
     })
 
-    .factory('Session', function ($resource, HOST) {
-        return $resource(HOST + '/sessions/:sessionId');
+    .factory('Session', function ($resource, SERVER_PATH) {
+        return $resource(SERVER_PATH + '/sessions/:sessionId');
     })
 
-    .controller('SessionListCtrl', function ($scope, Session) {
+    .controller('SessionListCtrl', function ($scope, Session, SERVER_PATH) {
+        $scope.serverPath = SERVER_PATH;
         $scope.sessions = Session.query();
     })
 
-    .controller('SessionCtrl', function ($scope, $stateParams, Session, Notification) {
+    .controller('SessionCtrl', function ($scope, $stateParams, Session, SERVER_PATH) {
+        $scope.serverPath = SERVER_PATH;
         $scope.session = Session.get({sessionId: $stateParams.sessionId});
 
         $scope.push = function(event) {

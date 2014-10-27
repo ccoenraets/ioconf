@@ -2,9 +2,9 @@
     <ion-content class="has-header">
         <div class="list card">
             <div class="item item-thumbnail-left">
-                <img ng-src="{{picturePath}}{{speaker.pic}}" class="speaker-pic">
+                <img ng-src="{{serverPath}}/pics/{{speaker.pic}}">
                 <h2>{{speaker.name}}</h2>
-                <p>bar</p>
+                <p>{{speaker.title}}</p>
             </div>
             <div class="item item-body">
                 <p>{{speaker.bio}}</p>

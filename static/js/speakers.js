@@ -28,19 +28,20 @@ angular.module('conference.speakers', ['conference.config'])
     })
 
     // Services
-    .factory('Speaker', function ($http, $rootScope, HOST) {
+    .factory('Speaker', function ($http, $rootScope, SERVER_PATH) {
         return {
             all: function() {
-                return $http.get(HOST + '/speakers');
+                return $http.get(SERVER_PATH + '/speakers');
             },
             get: function(speakerId) {
-                return $http.get(HOST + '/speakers/' + speakerId);
+                return $http.get(SERVER_PATH + '/speakers/' + speakerId);
             }
         };
     })
 
     //Controllers
-    .controller('SpeakerListCtrl', function ($scope, Speaker) {
+    .controller('SpeakerListCtrl', function ($scope, Speaker, SERVER_PATH) {
+        $scope.serverPath = SERVER_PATH;
         $scope.speakers = [];
         Speaker.all().success(function(speakers) {
             $scope.speakers = speakers;
@@ -53,11 +54,9 @@ angular.module('conference.speakers', ['conference.config'])
         };
     })
 
-    .controller('SpeakerCtrl', function ($scope, $stateParams, Speaker, HOST) {
-
-        $scope.picturePath = HOST + '/pics/';
+    .controller('SpeakerCtrl', function ($scope, $stateParams, Speaker, SERVER_PATH) {
+        $scope.serverPath = SERVER_PATH;
         Speaker.get($stateParams.speakerId).success(function(speaker) {
             $scope.speaker = speaker;
         });
-
     });

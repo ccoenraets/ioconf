@@ -4,8 +4,10 @@
     </ion-nav-buttons>
     <ion-content class="has-header">
         <ion-list>
-            <ion-item ng-repeat="session in sessions" href="#/app/sessions/{{session.id}}">
+            <ion-item class="item-avatar-left" ng-repeat="session in sessions" href="#/app/sessions/{{session.id}}">
+                <img ng-src="{{serverPath}}/pics/{{session.pic}}">
                 {{session.title}}
+                <p>{{session.speaker}}</p>
             </ion-item>
         </ion-list>
     </ion-content>
