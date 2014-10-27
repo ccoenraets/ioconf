@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.sessions', 'starter.speakers', 'starter.profiles'])
+angular.module('conference', ['ionic', 'conference.sessions', 'conference.speakers', 'conference.profiles'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {

@@ -1,4 +1,4 @@
-angular.module('starter.speakers', ['starter.config'])
+angular.module('conference.speakers', ['conference.config'])
 
     // Routes
     .config(function ($stateProvider) {

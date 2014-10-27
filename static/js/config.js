@@ -1,4 +1,4 @@
-angular.module('starter.config', [])
+angular.module('conference.config', [])
 
     .constant('FB_APP_ID', '1687934808098911')
 

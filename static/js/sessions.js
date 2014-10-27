@@ -1,4 +1,4 @@
-angular.module('starter.sessions', ['ngResource', 'starter.config', 'starter.push'])
+angular.module('conference.sessions', ['ngResource', 'conference.config', 'conference.push'])
 
     // Routes
     .config(function ($stateProvider) {

@@ -1,4 +1,4 @@
-angular.module('starter.push', ['starter.config'])
+angular.module('conference.push', ['conference.config'])
 
     .factory('Notification', function ($http, PUSH_SERVER_URL) {
         return {

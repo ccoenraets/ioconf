@@ -1,4 +1,4 @@
-angular.module('starter.profiles', ['starter.config'])
+angular.module('conference.profiles', ['conference.config'])
 
     .config(function ($stateProvider, FB_APP_ID) {
 
