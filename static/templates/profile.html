@@ -6,7 +6,7 @@
                 <p>{{user.city}}</p>
             </div>
             <div class="item item-body">
-                <img src="http://graph.facebook.com/{{user.id}}/picture?width=270&height=270"/>
+                <img src="http://graph.facebook.com/{{user.id}}/picture?width=270&height=270" ng-if="user.id"/>
             </div>
         </div>
     </ion-content>

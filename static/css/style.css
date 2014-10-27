@@ -1,1 +1,18 @@
-/* Empty. Add your own CSS if you like */
+.rounded-pic {
+    width: 300px !important;
+    height: 300px !important;
+    border-radius: 50px !important;
+}
+
+.menu-left .item {
+    background-color: transparent;
+    border: none;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #333;
+    color: #F0F1F1;
+}
+
+.menu-left .item-complex .item-content, .menu-left .item-radio .item-content {
+    background-color: transparent;
+}

@@ -4,7 +4,8 @@
     </ion-nav-buttons>
     <ion-content class="has-header">
         <ion-list>
-            <ion-item ng-repeat="speaker in speakers" href="#/app/speakers/{{speaker.id}}">
+            <ion-item class="item item-avatar" ng-repeat="speaker in speakers" href="#/app/speakers/{{speaker.id}}">
+                <img ng-src="pics/{{speaker.pic}}" class="rounded-pic">
                 {{speaker.name}}
             </ion-item>
         </ion-list>

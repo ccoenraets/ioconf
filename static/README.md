@@ -1,1 +1,1 @@
-Sample conference application for PhoneGap Day 2014
+Sample conference management application built with AngularJS and Ionic

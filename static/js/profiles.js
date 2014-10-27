@@ -27,7 +27,7 @@ angular.module('conference.profiles', ['conference.config'])
                 });
             },
             error: function (error) {
-                alert('Facebook error: ' + error.error_description);
+                alert('Error connecting to Facebook. Did you log in?');
             }
         });
     });
