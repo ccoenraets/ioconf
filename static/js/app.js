@@ -53,7 +53,7 @@ angular.module('conference', ['ionic', 'conference.sessions', 'conference.speake
 
         // Perform the login action when the user submits the login form
         $scope.doLogin = function () {
-            console.log('Doing login', $scope.loginData);
+            console.log('Login', $scope.loginData);
             alert("Only the Facebook login is implemented in this sample app.");
             $scope.closeLogin();
         };
