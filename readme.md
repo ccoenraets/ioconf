@@ -10,7 +10,7 @@ You can try a hosted version of the app here: [http://ioconf.herokuapp.com/](htt
 
 1. Clone this repository or download the zip file
 
-1. navivate to the ioconf directory
+1. Navigate to the ioconf directory
 
     ```
     cd ioconf
@@ -22,7 +22,7 @@ You can try a hosted version of the app here: [http://ioconf.herokuapp.com/](htt
     npm install
     ```
     
-1. Open a browser and access http://localhost:5000 to run the application
+1. Open a browser and access [http://localhost:5000](http://localhost:5000) to run the application
     
 
 ## Tutorial
