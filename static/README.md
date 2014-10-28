@@ -1,1 +1,0 @@
-Sample conference management application built with AngularJS and Ionic
